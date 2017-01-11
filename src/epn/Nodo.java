@@ -8,6 +8,11 @@ public class Nodo {
 public Nodo(String s, Nodo n) {
 	this.element= s;
 	next = n; }
+public Nodo(String s){
+	element=s;
+	next=null;
+	
+}
 
 public String getElement() { 
 	return element; } 
