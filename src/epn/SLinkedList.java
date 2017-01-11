@@ -30,9 +30,8 @@ public class SLinkedList {
 	 if (estaVacia()) 
 		  head= new Nodo(a);
 	 else
-		 aux= new Nodo(a,null);
-	 
-		 
+		 aux=head new Nodo(a);
+	     
 	 	
  }
  public void imprimirLista(){
