@@ -26,13 +26,19 @@ public class SLinkedList {
  }
  
  public void insertarFinal(String a){
-	 Nodo aux;
-	 if (estaVacia()) 
-		  head= new Nodo(a);
-	 else
-		 aux=head new Nodo(a);
-	     
-	 	
+
+     Nodo aux = new Nodo(a);
+     Nodo inicio;
+
+     if (estaVacia()) {
+         insertaralInicio(a);
+     }else {
+         inicio = head;         
+         while(inicio.getNext() != null){
+             inicio=inicio.getNext();
+         }              
+         inicio.setNext(aux);
+     }
  }
  public void imprimirLista(){
      System.out.println("Contenido de la lista");
