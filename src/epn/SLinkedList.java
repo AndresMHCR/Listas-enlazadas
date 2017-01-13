@@ -3,7 +3,7 @@ package epn;
 public class SLinkedList {
 
 	protected Nodo head;  
-	protected long size; 
+	protected int size; 
 	
  public SLinkedList() {
 	 head = null;
@@ -40,6 +40,72 @@ public class SLinkedList {
          inicio.setNext(aux);
      }
  }
+ 
+ public  void vaciar(){
+	  head=null;
+ }
+ 
+ public int tamaño(){
+     Nodo aux;
+     size=0;
+     aux = head;
+
+     while(aux != null){
+         size++;
+         aux = aux.getNext();
+     }
+     return size;
+
+ }
+ 
+public void localizar(int pos){
+	 
+     Nodo aux= head;
+     int contador=1;
+
+     if(pos<1 || pos>=tamaño()){
+         System.out.println("posicion no valida");
+     }else{
+         while(aux!=null){
+             if (pos == contador){
+                 System.out.println("Se encontro el elemento <"+aux.getElement()
+                 					+"> en la posicion "+ pos);
+                 aux=null;
+                 }
+                 
+             else{                 
+                 aux=aux.getNext();
+                 contador++;
+             }
+         }
+     }
+ }
+ public void eliminarpos(int pos){
+	 
+     Nodo aux= head;
+     Nodo anterior=null;
+     int contador=1;
+
+     if(pos<1 || pos>=tamaño()){
+         System.out.println("posicion no valida");
+     }else{
+         while(aux!=null){
+             if (pos == contador){
+                 if (anterior==null){
+                     head = head.getNext();
+                 }else {
+                     anterior.setNext(aux.getNext());
+                 }
+                 aux=null;
+             }else{
+                 anterior=aux;
+                 aux=aux.getNext();
+                 contador++;
+             }
+         }
+     }
+ }
+ 
  public void imprimirLista(){
      System.out.println("Contenido de la lista");
      System.out.println("---------------------");
